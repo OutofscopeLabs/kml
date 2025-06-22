@@ -10,6 +10,19 @@
 	<SimpleField name="SHAPE_Length" type="float"></SimpleField>
 	<SimpleField name="SHAPE_Area" type="float"></SimpleField>
 </Schema>
+  <Style id="countryStyle">
+      <LineStyle>
+        <!-- FF = 100% opacity; 2F1EE4 = BGR hex for rgb(228,30,47) -->
+        <color>FF2F1EE4</color>
+        <!-- Border thickness in pixels -->
+        <width>3</width>
+      </LineStyle>
+      <PolyStyle>
+        <!-- 26 = 15% opacity; 2F1EE4 = BGR hex for rgb(228,30,47) -->
+        <color>262F1EE4</color>
+      </PolyStyle>
+    </Style>
+
 <Folder><name>World_Countries__Generalized_</name>
   <Placemark>
 	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>

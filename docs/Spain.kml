@@ -1,78 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document id="root_doc">
+    <name>European Countries</name>
+    
+    <!-- Style Definitions -->
+    <Style id="transparentFill">
+      <PolyStyle>
+        <color>402F1EE4</color> <!-- 25% opacity red -->
+        <fill>1</fill>
+        <outline>1</outline>
+      </PolyStyle>
+      <LineStyle>
+        <color>FF2F1EE4</color> <!-- Solid red border -->
+        <width>1.5</width>
+      </LineStyle>
+    </Style>
 
-    <!-- Schema definition (your existing fields) -->
-    <Schema name="World_Countries__Generalized_" id="World_Countries__Generalized_">
+    <StyleMap id="countryStyleMap">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#transparentFill</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#transparentFill</styleUrl>
+      </Pair>
+    </StyleMap>
+
+    <!-- Schema definition -->
+    <Schema name="World_Countries" id="World_Countries">
       <SimpleField name="FID" type="int"/>
       <SimpleField name="COUNTRY" type="string"/>
       <SimpleField name="ISO" type="string"/>
-      <SimpleField name="COUNTRYAFF" type="string"/>
-      <SimpleField name="AFF_ISO" type="string"/>
-      <SimpleField name="SHAPE_Length" type="float"/>
-      <SimpleField name="SHAPE_Area" type="float"/>
     </Schema>
 
-    <!-- 1) Global style definition -->
-    <Style id="countryStyle">
-      <LineStyle>
-        <!-- FF = 100% opacity; 2F1EE4 = BGR for rgb(228,30,47) -->
-        <color>FF2F1EE4</color>
-        <width>3</width>
-      </LineStyle>
-      <PolyStyle>
-        <!-- 26 = 15% opacity; 2F1EE4 = BGR for rgb(228,30,47) -->
-        <color>262F1EE4</color>
-      </PolyStyle>
-    </Style>
+    <!-- Spain Placemark -->
+    <Placemark>
+      <name>Spain</name>
+      <styleUrl>#countryStyleMap</styleUrl>
+      
+      <ExtendedData>
+        <SchemaData schemaUrl="#World_Countries">
+          <SimpleData name="FID">248</SimpleData>
+          <SimpleData name="COUNTRY">Spain</SimpleData>
+          <SimpleData name="ISO">ES</SimpleData>
+        </SchemaData>
+      </ExtendedData>
 
-    <Folder>
-      <name>World_Countries__Generalized_</name>
-
-      <!-- 2) Your Spain Placemark -->
-      <Placemark>
-        <!-- a) Human-readable name -->
-        <name>Spain</name>
-
-        <!-- b) Apply the global style -->
-        <styleUrl>#countryStyle</styleUrl>
-
-        <!-- c) Your data fields -->
-        <ExtendedData>
-          <SchemaData schemaUrl="#World_Countries__Generalized_">
-            <SimpleData name="FID">248</SimpleData>
-            <SimpleData name="COUNTRY">Spain</SimpleData>
-            <SimpleData name="ISO">ES</SimpleData>
-            <SimpleData name="COUNTRYAFF">Spain</SimpleData>
-            <SimpleData name="AFF_ISO">ES</SimpleData>
-            <SimpleData name="SHAPE_Length">51.7249563726083</SimpleData>
-            <SimpleData name="SHAPE_Area">52.9154485823975</SimpleData>
-          </SchemaData>
-        </ExtendedData>
-
-        <!-- d) Your geometry -->
-        <MultiGeometry>
-          <Polygon>
-            <outerBoundaryIs>
-              <LinearRing>
-                <coordinates>
-                  -2.91471773799998,35.273609123,0 
-                  -2.93923681599995,35.264436135,0 
-                  -2.96507285899997,35.2813181270001,0 
-                  -2.96618178499995,35.3166270620001,0 
-                  -2.94694598799992,35.3291642090001,0 
-                  -2.93055484099995,35.295553951,0 
-                  -2.91471773799998,35.273609123,0
-                </coordinates>
-              </LinearRing>
-            </outerBoundaryIs>
-          </Polygon>
-          <!-- (Any additional Polygon rings here…) -->
-        </MultiGeometry>
-      </Placemark>
-
-      <!-- (Repeat for any other placemarks you need…) -->
-
-    </Folder>
+      <MultiGeometry>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>
+                -2.91471773799998,35.273609123,0 
+                -2.93923681599995,35.264436135,0 
+                -2.96507285899997,35.2813181270001,0 
+                -2.96618178499995,35.3166270620001,0 
+                -2.94694598799992,35.3291642090001,0 
+                -2.93055484099995,35.295553951,0 
+                -2.91471773799998,35.273609123,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </MultiGeometry>
+    </Placemark>
+    
+    <!-- Add other countries here -->
+    
   </Document>
 </kml>

@@ -25,7 +25,7 @@
 
 <Folder><name>World_Countries__Generalized_</name>
   <Placemark>
-	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<styleUrl>#countryStyle</styleUrl>
 	<ExtendedData><SchemaData schemaUrl="#World_Countries__Generalized_">
 		<SimpleData name="FID">248</SimpleData>
 		<SimpleData name="COUNTRY">Spain</SimpleData>
